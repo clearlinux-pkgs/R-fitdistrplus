@@ -4,7 +4,7 @@
 #
 Name     : R-fitdistrplus
 Version  : 1.0.11
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/fitdistrplus_1.0-11.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fitdistrplus_1.0-11.tar.gz
 Summary  : Help to Fit of a Parametric Distribution to Non-Censored or
