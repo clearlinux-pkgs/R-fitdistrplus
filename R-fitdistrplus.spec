@@ -4,19 +4,22 @@
 #
 Name     : R-fitdistrplus
 Version  : 1.0.14
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/fitdistrplus_1.0-14.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fitdistrplus_1.0-14.tar.gz
 Summary  : Help to Fit of a Parametric Distribution to Non-Censored or
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-GeneralizedHyperbolic
-Requires: R-Hmisc
-Requires: R-actuar
-Requires: R-npsurv
+Requires: R-DistributionUtils
+Requires: R-expint
+Requires: R-lsei
+BuildRequires : R-DistributionUtils
 BuildRequires : R-GeneralizedHyperbolic
 BuildRequires : R-Hmisc
 BuildRequires : R-actuar
+BuildRequires : R-expint
+BuildRequires : R-labeling
+BuildRequires : R-lsei
 BuildRequires : R-npsurv
 BuildRequires : buildreq-R
 
@@ -31,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548270264
+export SOURCE_DATE_EPOCH=1556498761
 
 %install
-export SOURCE_DATE_EPOCH=1548270264
+export SOURCE_DATE_EPOCH=1556498761
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -70,8 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library fitdistrplus|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc fitdistrplus || :
 
 
 %files
@@ -120,3 +122,43 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/fitdistrplus/help/paths.rds
 /usr/lib64/R/library/fitdistrplus/html/00Index.html
 /usr/lib64/R/library/fitdistrplus/html/R.css
+/usr/lib64/R/library/fitdistrplus/tests/t-CIcdfplot.R
+/usr/lib64/R/library/fitdistrplus/tests/t-bootdist.R
+/usr/lib64/R/library/fitdistrplus/tests/t-bootdistcens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-cdfcomp.R
+/usr/lib64/R/library/fitdistrplus/tests/t-cdfcompcens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-cvg-algo.R
+/usr/lib64/R/library/fitdistrplus/tests/t-denscomp.R
+/usr/lib64/R/library/fitdistrplus/tests/t-descdist.R
+/usr/lib64/R/library/fitdistrplus/tests/t-detectbound.R
+/usr/lib64/R/library/fitdistrplus/tests/t-fitbench.R
+/usr/lib64/R/library/fitdistrplus/tests/t-fitdist-customoptim.R
+/usr/lib64/R/library/fitdistrplus/tests/t-fitdist.R
+/usr/lib64/R/library/fitdistrplus/tests/t-fitdistcens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-getparam.R
+/usr/lib64/R/library/fitdistrplus/tests/t-gofstat.R
+/usr/lib64/R/library/fitdistrplus/tests/t-init-actuar.R
+/usr/lib64/R/library/fitdistrplus/tests/t-llplot.R
+/usr/lib64/R/library/fitdistrplus/tests/t-lnL-surf.R
+/usr/lib64/R/library/fitdistrplus/tests/t-logLik-vcov-coef.R
+/usr/lib64/R/library/fitdistrplus/tests/t-manageparam.R
+/usr/lib64/R/library/fitdistrplus/tests/t-mgedist.R
+/usr/lib64/R/library/fitdistrplus/tests/t-mledist-cens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-mledist-nocens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-mmedist.R
+/usr/lib64/R/library/fitdistrplus/tests/t-parallel.R
+/usr/lib64/R/library/fitdistrplus/tests/t-plotdist.R
+/usr/lib64/R/library/fitdistrplus/tests/t-plotdistcens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-ppcomp.R
+/usr/lib64/R/library/fitdistrplus/tests/t-ppcompcens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-prefit.R
+/usr/lib64/R/library/fitdistrplus/tests/t-qme-discrete.R
+/usr/lib64/R/library/fitdistrplus/tests/t-qmedist.R
+/usr/lib64/R/library/fitdistrplus/tests/t-qqcomp.R
+/usr/lib64/R/library/fitdistrplus/tests/t-qqcompcens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-quantiledist.R
+/usr/lib64/R/library/fitdistrplus/tests/t-startfixarg-overall.R
+/usr/lib64/R/library/fitdistrplus/tests/t-startingvalues.R
+/usr/lib64/R/library/fitdistrplus/tests/t-util-testdensity.R
+/usr/lib64/R/library/fitdistrplus/tests/t-weird-ppcomp-cens.R
+/usr/lib64/R/library/fitdistrplus/tests/t-weird-qqcomp-cens.R
