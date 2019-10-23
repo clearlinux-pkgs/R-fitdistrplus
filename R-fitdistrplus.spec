@@ -4,21 +4,19 @@
 #
 Name     : R-fitdistrplus
 Version  : 1.0.14
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/fitdistrplus_1.0-14.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fitdistrplus_1.0-14.tar.gz
 Summary  : Help to Fit of a Parametric Distribution to Non-Censored or
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-GeneralizedHyperbolic
-Requires: R-Hmisc
-Requires: R-actuar
 Requires: R-npsurv
 BuildRequires : R-GeneralizedHyperbolic
 BuildRequires : R-Hmisc
 BuildRequires : R-actuar
 BuildRequires : R-npsurv
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -31,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569382695
+export SOURCE_DATE_EPOCH=1571830351
 
 %install
-export SOURCE_DATE_EPOCH=1569382695
+export SOURCE_DATE_EPOCH=1571830351
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
