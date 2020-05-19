@@ -4,7 +4,7 @@
 #
 Name     : R-fitdistrplus
 Version  : 1.1.1
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/fitdistrplus_1.1-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fitdistrplus_1.1-1.tar.gz
 Summary  : Help to Fit of a Parametric Distribution to Non-Censored or
@@ -31,10 +31,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589911122
+export SOURCE_DATE_EPOCH=1589913218
 
 %install
-export SOURCE_DATE_EPOCH=1589911122
+export SOURCE_DATE_EPOCH=1589913218
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
